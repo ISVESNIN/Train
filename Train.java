@@ -22,7 +22,7 @@ class Train {
             trainArr[i] = new TrainCar();
             trainArr[i].carNumber = i;
 
-            trainArr[i].light = rnLight.nextInt(2); // 1-on 0-off //test_commit
+            trainArr[i].light = rnLight.nextInt(2); // 1-on 0-off //tested
 
             if (i != trainCarCount - 1) {
                 trainArr[i].nextCar = i + 1;
