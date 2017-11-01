@@ -5,10 +5,19 @@ public class GoingMan {
         int step=0;
         Train curTrain = new Train();
         curTrain.newTrain();
+        TrainCar curTrainCar = new TrainCar();
 
         while (step<=100) {
-            curTrain.SetOnCarLight();
-            curTrain.GetNextCarLight();
+            curTrainCar = curTrain.getCurCar();
+            System.out.println("step "
+                    + step
+                    + " Switch "
+                    + curTrainCar.GetCurCarLight()
+                    + "->"
+                    + curTrainCar.SetOnCarLight()
+                    + " Car "
+                    + curTrainCar.GetCarNumber());
+            curTrainCar = curTrain.getNextCar();
             step++;
         }
 

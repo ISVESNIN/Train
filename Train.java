@@ -43,53 +43,35 @@ class Train {
 
     }
 
-    int GetCurCarLight() {
+    TrainCar getCurCar() {
         if (curCarNumber == 0) {
-            System.out.println("GetCurCarLight car:" + curCarNumber + " light is " + trainArr[curCarNumber].light);
-            return trainArr[0].light;
+            curCarNumber = 0;
         }
-        else {
-            System.out.println("car:" + curCarNumber);
-            return trainArr[curCarNumber].light;
-        }
+        curCarNumber = trainArr[curCarNumber].GetCarNumber();
+        return trainArr[curCarNumber];
     }
 
-    int GetNextCarLight() {
-        curCarNumber = trainArr[curCarNumber].nextCar;
-        System.out.println("next car:" + curCarNumber + " light is " + trainArr[curCarNumber].light);
-        return trainArr[curCarNumber].light;
-
-    }
-
-    int GetPrevCarLight() {
-        curCarNumber = trainArr[curCarNumber].prevCar;
-        System.out.println("GetPrevCarLight car:" + curCarNumber);
-        return trainArr[curCarNumber].light;
-
-    }
-
-    int SetOffCarLight() {
+    TrainCar getNextCar() {
         if (curCarNumber == 0) {
-            trainArr[0].light = 0;
-        } else
-            trainArr[curCarNumber].light = 0;
-        return trainArr[curCarNumber].light;
-
-    }
-
-    int SetOnCarLight() {
-        if (curCarNumber == 0) {
-            trainArr[0].light = 1;
-            System.out.println("curr car:" + curCarNumber + " SetOnCarLight:" + curCarNumber);
+            curCarNumber = trainArr[0].GetNextCar();
+            return trainArr[curCarNumber];
         } else {
-            trainArr[curCarNumber].light = 1;
-            System.out.println("curr car:" + curCarNumber + " SetOnCarLight:" + curCarNumber);
+            curCarNumber = trainArr[curCarNumber].GetNextCar();
+            return trainArr[curCarNumber];
         }
-        return trainArr[curCarNumber].light;
+
 
     }
 
+    TrainCar getPrevCar() {
+        if (curCarNumber == 0) {
+            curCarNumber = trainArr[0].GetPrevCar();
+            return trainArr[curCarNumber];
+        } else {
+            curCarNumber = trainArr[curCarNumber].GetPrevCar();
+            return trainArr[curCarNumber];
+        }
 
 
-
+    }
     }
