@@ -45,7 +45,7 @@ public class GoingMan {
 
         } while (isFind != 1);
 
-        System.out.println(lastCar);
+        System.out.println(lastCar); //Кол-во вагонов
 
     }
 

@@ -8,8 +8,8 @@ class Train {
 
     void newTrain()
     {
-        int trainMinLenght = 4;
-        int trainMaxLenght = 50;
+        int trainMinLenght = 3;
+        int trainMaxLenght = 100;
 
         Random rn = new Random();
         Random rnLight = new Random();
