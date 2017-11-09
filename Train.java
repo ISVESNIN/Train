@@ -5,15 +5,15 @@ import java.util.Random;
 class Train {
     private static TrainCar[] trainArr;
     private static int curCarNumber = 0;
-
+    public Integer trainCarCount;
     void newTrain()
     {
-        int trainMinLenght = 3;
-        int trainMaxLenght = 100;
+        int trainMinLenght = 4;
+        int trainMaxLenght = 1000000;
 
         Random rn = new Random();
         Random rnLight = new Random();
-        int trainCarCount;
+
         trainCarCount = trainMinLenght + rn.nextInt(trainMaxLenght);
         int i=0;
 
@@ -41,6 +41,11 @@ class Train {
         }
         System.out.println("Train created of " + trainCarCount + " Cars");
 
+    }
+
+    TrainCar jumpToCar(int carNumber) {
+        curCarNumber = trainArr[carNumber].GetCarNumber();
+        return trainArr[carNumber];
     }
 
     TrainCar getCurCar() {
